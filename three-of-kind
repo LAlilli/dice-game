@@ -6,10 +6,6 @@ import java.util.Scanner;
 import java.awt.event.*;
 import javax.swing.*;
 
-
-//Three of a Kind 
-//Roll 3 of a kind 3 times and you win!
-
 public class ThreeOfKind {
 
 	static boolean verbose = false;
