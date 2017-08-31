@@ -8,7 +8,6 @@ public class DicePanel extends JPanel{
 	int dieValue2;
 	int dieValue3;
 	int dieValue4;
-	int dieValue5;
 	int counter = 0;
 	
 	//paint method - draw die
@@ -102,25 +101,15 @@ public class DicePanel extends JPanel{
 		g.setColor(Color.black);
 		g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 40));
 		g.drawString(String.valueOf(dieValue4), 540, 115);
-	}
-	
-	void setRedDie(Graphics g)
-	{
-		g.setColor(Color.red);
-		g.fillRoundRect(650, 50, 100, 100, 25, 25);
-		g.setColor(Color.black);
-		g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 40));
-		g.drawString(String.valueOf(dieValue5), 690, 115);
 	}*/
 	
 	//manually set die value
-	void setDieValue (int dieValue1, int dieValue2, int dieValue3, int dieValue4, int dieValue5)
+	void setDieValue (int dieValue1, int dieValue2, int dieValue3, int dieValue4)
 	{
 		this.dieValue1 = dieValue1;
 		this.dieValue2 = dieValue2;
 		this.dieValue3 = dieValue3;
 		this.dieValue4 = dieValue4;
-		this.dieValue5 = dieValue5;
 	}
 	
 	//roll die, set die to random values
@@ -130,9 +119,6 @@ public class DicePanel extends JPanel{
 		dieValue2 = (int)(Math.random() * 6 + 1);
 		dieValue3 = (int)(Math.random() * 6 + 1);
 		dieValue4 = (int)(Math.random() * 6 + 1);
-		
-		//don't need 5th die
-		//dieValue5 = (int)(Math.random() * 6 + 1);
 	}
 	
 	int counterSet ()
@@ -151,7 +137,7 @@ public class DicePanel extends JPanel{
 		}
 		else
 		{
-			return dieValue1 + dieValue2 + dieValue3 + dieValue4 + dieValue5;
+			return dieValue1 + dieValue2 + dieValue3 + dieValue4;
 		}
 	}
 
@@ -168,7 +154,7 @@ public class DicePanel extends JPanel{
 			counter++;
 			return true;
 		}
-		else if(dieValue3 == dieValue4 && dieValue3 == dieValue5)
+		else if(dieValue3 == dieValue4 && dieValue3 == dieValue2)
 		{
 			counter++;
 			return true;
@@ -178,27 +164,12 @@ public class DicePanel extends JPanel{
 			counter++;
 			return true;
 		}
-		else if(dieValue2 == dieValue4 && dieValue2 == dieValue5)
-		{
-			counter++;
-			return true;
-		}
-		else if(dieValue1 == dieValue3 && dieValue1 == dieValue5)
-		{
-			counter++;
-			return true;
-		}
-		else if(dieValue1 == dieValue2 && dieValue1 == dieValue5)
+		else if(dieValue2 == dieValue4 && dieValue2 == dieValue1)
 		{
 			counter++;
 			return true;
 		}
 		else if(dieValue1 == dieValue2 && dieValue1 == dieValue4)
-		{
-			counter++;
-			return true;
-		}
-		else if(dieValue1 == dieValue4 && dieValue1 == dieValue5)
 		{
 			counter++;
 			return true;
